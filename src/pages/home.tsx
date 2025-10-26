@@ -58,7 +58,7 @@ export default function Home() {
         </div>
 
         {/* Main Actions */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {/* Scan Button */}
           <Card className="p-6 hover:shadow-lg transition-shadow">
             <Button
@@ -102,7 +102,7 @@ export default function Home() {
           </Card>
 
           {/* BMI & Diet Planner */}
-          <Card className="p-6 bg-gradient-to-br from-blue-100 to-green-100 hover:shadow-lg transition-shadow">
+          {/* <Card className="p-6 bg-gradient-to-br from-blue-100 to-green-100 hover:shadow-lg transition-shadow">
             <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-blue-700">
               <span role="img" aria-label="bmi">🧑‍⚕️</span>
               BMI & Diet Planner
@@ -115,7 +115,7 @@ export default function Home() {
             >
               Calculate BMI & Get Diet
             </Button>
-          </Card>
+          </Card> */}
         </div>
 
         {/* Recent Scans */}
