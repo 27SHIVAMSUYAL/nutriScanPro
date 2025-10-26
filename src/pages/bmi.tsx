@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const genders = ["Male", "Female"];
-const ages = Array.from({ length: 83 }, (_, i) => i + 18); // 18-100
+const ages = Array.from({ length: 100 }, (_, i) => i + 1); // 1-100
+const dietTypes = ["Vegan", "Vegetarian", "Non-Veg"];
 
 function calculateBMI(weight: number, height: number) {
   const heightM = height / 100;
@@ -20,70 +21,192 @@ function getStatus(bmi: number) {
 
 const diets = {
   Male: {
-    Obese: [
-      "Day 1: Oats, grilled chicken, salad",
-      "Day 2: Greek yogurt, fish, steamed veggies",
-      "Day 3: Eggs, turkey, quinoa",
-      "Day 4: Smoothie, lean beef, greens",
-      "Day 5: Cottage cheese, salmon, broccoli",
-      "Day 6: Scrambled eggs, chicken, spinach",
-      "Day 7: Fruit bowl, tofu, mixed salad",
-    ],
-    "Not Healthy": [
-      "Day 1: Eggs, rice, veggies",
-      "Day 2: Paratha, dal, salad",
-      "Day 3: Poha, chicken, beans",
-      "Day 4: Upma, fish, greens",
-      "Day 5: Dosa, beef, veggies",
-      "Day 6: Idli, turkey, salad",
-      "Day 7: Fruit, paneer, mixed veggies",
-    ],
-    Healthy: [
-      "Day 1: Oats, chicken, salad",
-      "Day 2: Yogurt, fish, veggies",
-      "Day 3: Eggs, turkey, quinoa",
-      "Day 4: Smoothie, beef, greens",
-      "Day 5: Cheese, salmon, broccoli",
-      "Day 6: Eggs, chicken, spinach",
-      "Day 7: Fruit, tofu, salad",
-    ],
+    Obese: {
+      Vegan: [
+        "Oats, almond milk, salad",
+        "Chia pudding, lentils, steamed veggies",
+        "Tofu scramble, beans, quinoa",
+        "Smoothie, chickpeas, greens",
+        "Fruit bowl, tempeh, broccoli",
+        "Vegan yogurt, seitan, spinach",
+        "Granola, hummus, mixed salad",
+      ],
+      Vegetarian: [
+        "Oats, paneer, salad",
+        "Greek yogurt, dal, steamed veggies",
+        "Eggs, beans, quinoa",
+        "Smoothie, cottage cheese, greens",
+        "Fruit bowl, cheese, broccoli",
+        "Vegetarian omelette, lentils, spinach",
+        "Granola, paneer, mixed salad",
+      ],
+      "Non-Veg": [
+        "Oats, grilled chicken, salad",
+        "Greek yogurt, fish, steamed veggies",
+        "Eggs, turkey, quinoa",
+        "Smoothie, lean beef, greens",
+        "Cottage cheese, salmon, broccoli",
+        "Scrambled eggs, chicken, spinach",
+        "Fruit bowl, tofu, mixed salad",
+      ],
+    },
+    "Not Healthy": {
+      Vegan: [
+        "Poha, lentils, veggies",
+        "Paratha, dal, salad",
+        "Upma, beans, greens",
+        "Dosa, tofu, veggies",
+        "Idli, chickpeas, salad",
+        "Fruit, tempeh, mixed veggies",
+        "Oats, hummus, salad",
+      ],
+      Vegetarian: [
+        "Eggs, rice, veggies",
+        "Paratha, dal, salad",
+        "Poha, paneer, beans",
+        "Upma, cheese, greens",
+        "Dosa, tofu, veggies",
+        "Idli, beans, salad",
+        "Fruit, paneer, mixed veggies",
+      ],
+      "Non-Veg": [
+        "Eggs, rice, veggies",
+        "Paratha, dal, salad",
+        "Poha, chicken, beans",
+        "Upma, fish, greens",
+        "Dosa, beef, veggies",
+        "Idli, turkey, salad",
+        "Fruit, paneer, mixed veggies",
+      ],
+    },
+    Healthy: {
+      Vegan: [
+        "Oats, almond milk, salad",
+        "Vegan yogurt, lentils, veggies",
+        "Tofu scramble, beans, quinoa",
+        "Smoothie, chickpeas, greens",
+        "Fruit bowl, tempeh, broccoli",
+        "Granola, seitan, spinach",
+        "Oats, hummus, salad",
+      ],
+      Vegetarian: [
+        "Oats, paneer, salad",
+        "Yogurt, dal, veggies",
+        "Eggs, beans, quinoa",
+        "Smoothie, cottage cheese, greens",
+        "Cheese, lentils, broccoli",
+        "Eggs, paneer, spinach",
+        "Fruit, tofu, salad",
+      ],
+      "Non-Veg": [
+        "Oats, chicken, salad",
+        "Yogurt, fish, veggies",
+        "Eggs, turkey, quinoa",
+        "Smoothie, beef, greens",
+        "Cheese, salmon, broccoli",
+        "Eggs, chicken, spinach",
+        "Fruit, tofu, salad",
+      ],
+    },
   },
   Female: {
-    Obese: [
-      "Day 1: Oats, grilled paneer, salad",
-      "Day 2: Yogurt, fish, steamed veggies",
-      "Day 3: Eggs, tofu, quinoa",
-      "Day 4: Smoothie, beans, greens",
-      "Day 5: Cheese, salmon, broccoli",
-      "Day 6: Scrambled eggs, chicken, spinach",
-      "Day 7: Fruit bowl, tofu, mixed salad",
-    ],
-    "Not Healthy": [
-      "Day 1: Eggs, rice, veggies",
-      "Day 2: Paratha, dal, salad",
-      "Day 3: Poha, paneer, beans",
-      "Day 4: Upma, fish, greens",
-      "Day 5: Dosa, tofu, veggies",
-      "Day 6: Idli, beans, salad",
-      "Day 7: Fruit, paneer, mixed veggies",
-    ],
-    Healthy: [
-      "Day 1: Oats, paneer, salad",
-      "Day 2: Yogurt, fish, veggies",
-      "Day 3: Eggs, tofu, quinoa",
-      "Day 4: Smoothie, beans, greens",
-      "Day 5: Cheese, salmon, broccoli",
-      "Day 6: Eggs, chicken, spinach",
-      "Day 7: Fruit, tofu, salad",
-    ],
+    Obese: {
+      Vegan: [
+        "Oats, almond milk, salad",
+        "Chia pudding, lentils, steamed veggies",
+        "Tofu scramble, beans, quinoa",
+        "Smoothie, chickpeas, greens",
+        "Fruit bowl, tempeh, broccoli",
+        "Vegan yogurt, seitan, spinach",
+        "Granola, hummus, mixed salad",
+      ],
+      Vegetarian: [
+        "Oats, paneer, salad",
+        "Greek yogurt, dal, steamed veggies",
+        "Eggs, beans, quinoa",
+        "Smoothie, cottage cheese, greens",
+        "Fruit bowl, cheese, broccoli",
+        "Vegetarian omelette, lentils, spinach",
+        "Granola, paneer, mixed salad",
+      ],
+      "Non-Veg": [
+        "Oats, grilled chicken, salad",
+        "Yogurt, fish, steamed veggies",
+        "Eggs, tofu, quinoa",
+        "Smoothie, beans, greens",
+        "Cheese, salmon, broccoli",
+        "Scrambled eggs, chicken, spinach",
+        "Fruit bowl, tofu, mixed salad",
+      ],
+    },
+    "Not Healthy": {
+      Vegan: [
+        "Poha, lentils, veggies",
+        "Paratha, dal, salad",
+        "Upma, beans, greens",
+        "Dosa, tofu, veggies",
+        "Idli, chickpeas, salad",
+        "Fruit, tempeh, mixed veggies",
+        "Oats, hummus, salad",
+      ],
+      Vegetarian: [
+        "Eggs, rice, veggies",
+        "Paratha, dal, salad",
+        "Poha, paneer, beans",
+        "Upma, cheese, greens",
+        "Dosa, tofu, veggies",
+        "Idli, beans, salad",
+        "Fruit, paneer, mixed veggies",
+      ],
+      "Non-Veg": [
+        "Eggs, rice, veggies",
+        "Paratha, dal, salad",
+        "Poha, chicken, beans",
+        "Upma, fish, greens",
+        "Dosa, beef, veggies",
+        "Idli, turkey, salad",
+        "Fruit, paneer, mixed veggies",
+      ],
+    },
+    Healthy: {
+      Vegan: [
+        "Oats, almond milk, salad",
+        "Vegan yogurt, lentils, veggies",
+        "Tofu scramble, beans, quinoa",
+        "Smoothie, chickpeas, greens",
+        "Fruit bowl, tempeh, broccoli",
+        "Granola, seitan, spinach",
+        "Oats, hummus, salad",
+      ],
+      Vegetarian: [
+        "Oats, paneer, salad",
+        "Yogurt, dal, veggies",
+        "Eggs, beans, quinoa",
+        "Smoothie, cottage cheese, greens",
+        "Cheese, lentils, broccoli",
+        "Eggs, paneer, spinach",
+        "Fruit, tofu, salad",
+      ],
+      "Non-Veg": [
+        "Oats, chicken, salad",
+        "Yogurt, fish, veggies",
+        "Eggs, turkey, quinoa",
+        "Smoothie, beef, greens",
+        "Cheese, salmon, broccoli",
+        "Eggs, chicken, spinach",
+        "Fruit, tofu, salad",
+      ],
+    },
   },
 };
+
 
 export default function BMIPage() {
   const [age, setAge] = useState(25);
   const [weight, setWeight] = useState(70);
   const [height, setHeight] = useState(170);
   const [gender, setGender] = useState("Male");
+  const [dietType, setDietType] = useState("Vegetarian");
   const [bmi, setBMI] = useState<number | null>(null);
   const [status, setStatus] = useState<string>("");
   const [showDiet, setShowDiet] = useState(false);
@@ -120,6 +243,12 @@ export default function BMIPage() {
               </select>
             </div>
             <div>
+              <label className="block mb-2 font-semibold text-green-700">Diet Type</label>
+              <select value={dietType} onChange={e => setDietType(e.target.value)} className="w-full p-3 rounded-lg border border-green-300 focus:ring-2 focus:ring-green-400">
+                {dietTypes.map(dt => <option key={dt} value={dt}>{dt}</option>)}
+              </select>
+            </div>
+            <div>
               <label className="block mb-2 font-semibold text-green-700">Weight (kg)</label>
               <Input type="number" min={30} max={200} value={weight} onChange={e => setWeight(Number(e.target.value))} className="w-full p-3 rounded-lg border border-green-300 focus:ring-2 focus:ring-green-400" />
             </div>
@@ -142,11 +271,11 @@ export default function BMIPage() {
                 <span className={`text-2xl font-bold mt-1 ${status === 'Obese' ? 'text-red-600' : status === 'Healthy' ? 'text-green-600' : 'text-yellow-600'}`}>{status}</span>
               </div>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-700">7-Day Diet Plan ({gender})</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-700">7-Day Diet Plan ({gender}, {dietType})</h2>
             <ul className="space-y-3 text-left mx-auto max-w-md">
-              {diets[gender][status].map((day, i) => (
+              {diets[gender][status][dietType].map((day, i) => (
                 <li key={i} className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl shadow p-4 border-l-4 border-green-400 font-medium text-gray-700 flex items-center gap-2">
-                  <span className="text-green-500 font-bold">Day {i+1}:</span> <span>{day.replace(/^Day \d+: /, "")}</span>
+                  <span className="text-green-500 font-bold">Day {i+1}:</span> <span>{day}</span>
                 </li>
               ))}
             </ul>
