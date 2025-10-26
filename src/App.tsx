@@ -7,6 +7,7 @@ import Home from "@/pages/home";
 import Scanner from "@/pages/scanner";
 import ProductPage from "@/pages/product";
 import NotFound from "@/pages/not-found";
+import BMIPage from "@/pages/bmi";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/scanner" component={Scanner} />
           <Route path="/product/:barcode" component={ProductPage} />
+          <Route path="/bmi" component={BMIPage} />
           <Route component={NotFound} />
         </Switch>
         <Toaster />
